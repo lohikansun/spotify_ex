@@ -7,19 +7,14 @@ defmodule Spotify.Player do
 
   def play(conn, params) do
     url = "https://api.spotify.com/v1/me/player/play "
-    conn |> Client.put(url, [])
+    conn |> Client.put(url, []) |> handle_response
   end
 
   def pause(conn, params) do
     url = "https://api.spotify.com/v1/me/player/pause "
-    conn |> Client.put(url, [])
+    conn |> Client.put(url, []) |> handle_response
   end
 
-  def build_response(body) do
-    body
-      |> map_paging
-  end
-
-  defp map_paging(body), do: {Paging.response(body, []), body}
+  def build_response(body), do: body
 
 end
