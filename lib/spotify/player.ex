@@ -1,6 +1,6 @@
 defmodule Spotify.Player do
 
-  use Responder
+  #use Responder
   import Helpers
 
   alias Spotify.{Client, Album, Artist, Playlist, Track}
