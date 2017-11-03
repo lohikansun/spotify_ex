@@ -10,10 +10,15 @@ defmodule Spotify.Player do
     conn |> Client.get(url) |> handle_response
   end
 
-  def build_response(body) do
-    body
-      |> map_paging
+  def pause(conn, params) do
+    url = "https://api.spotify.com/v1/me/player/pause "
+    conn |> Client.get(url) |> handle_response
   end
+
+  #def build_response(body) do
+  #  body
+  #    |> map_paging
+  #end
 
   defp map_paging(body), do: {Paging.response(body, []), body}
 
