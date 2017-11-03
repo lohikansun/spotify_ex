@@ -3,6 +3,8 @@ defmodule Spotify.Player do
   use Responder
   import Helpers
 
+  alias Spotify.{Client, Album, Artist, Playlist, Track}
+
   def play(conn, params) do
     url = "https://api.spotify.com/v1/me/player/play "
     conn |> Client.get(url) |> handle_response
