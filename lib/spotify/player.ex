@@ -7,12 +7,12 @@ defmodule Spotify.Player do
 
   def play(conn, params) do
     url = "https://api.spotify.com/v1/me/player/play "
-    conn |> Client.get(url)
+    conn |> Client.put(url, [])
   end
 
   def pause(conn, params) do
     url = "https://api.spotify.com/v1/me/player/pause "
-    conn |> Client.get(url)
+    conn |> Client.put(url, [])
   end
 
   def build_response(body) do
