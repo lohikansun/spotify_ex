@@ -15,10 +15,10 @@ defmodule Spotify.Player do
     conn |> Client.get(url) |> handle_response
   end
 
-  #def build_response(body) do
-  #  body
-  #    |> map_paging
-  #end
+  def build_response(body) do
+    body
+      |> map_paging
+  end
 
   defp map_paging(body), do: {Paging.response(body, []), body}
 
