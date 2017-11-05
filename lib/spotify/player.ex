@@ -1,3 +1,4 @@
+require IEx
 defmodule Spotify.Player do
 
   use Responder
@@ -11,6 +12,7 @@ defmodule Spotify.Player do
 
   def play(conn, params) do
     url = play_url(params)
+    IEx.pry
     conn |> Client.put(url) |> handle_response
   end
 
