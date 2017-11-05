@@ -1,3 +1,4 @@
+require IEx
 defmodule Spotify.Client do
   @moduledoc false
 
@@ -6,6 +7,7 @@ defmodule Spotify.Client do
   end
 
   def put(conn_or_creds, url, body \\ "") do
+    IEx.pry
     HTTPoison.put(url, body, put_headers(conn_or_creds))
   end
 

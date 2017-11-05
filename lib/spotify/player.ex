@@ -12,7 +12,6 @@ defmodule Spotify.Player do
 
   def play(conn, params) do
     url = play_url(params)
-    IEx.pry
     conn |> Client.put(url) |> handle_response
   end
 

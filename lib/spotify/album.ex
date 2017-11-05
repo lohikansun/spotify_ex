@@ -1,4 +1,3 @@
-require IEx
 defmodule Spotify.Album do
   @moduledoc """
     Functions for retrieving information about albums.
@@ -168,7 +167,6 @@ defmodule Spotify.Album do
 
   def save_albums(conn, params) do
     url = save_albums_url(params)
-    IEx.pry
     conn |> Client.put(url) |> handle_response
   end
 
