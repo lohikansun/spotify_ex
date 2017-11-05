@@ -7,7 +7,7 @@ defmodule Spotify.Player do
   alias Spotify.{Client, Album, Artist, Playlist, Track}
 
   def play(conn, params) do
-    url = "https://api.spotify.com/v1/me/player/devices"
+    url = "https://api.spotify.com/v1/me/player/play"
     conn |> Client.put(url) |> handle_response
   end
 
