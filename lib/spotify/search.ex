@@ -1,3 +1,4 @@
+require IEx
 defmodule Spotify.Search do
   @moduledoc """
   Spotify search endpoints. Spotify allows querying for artists, albums, playlists, and tracks.
@@ -24,6 +25,7 @@ defmodule Spotify.Search do
   """
   def query(conn, params)  do
     url = query_url(params)
+    IEx.pry
     conn |> Client.get(url) |> handle_response
   end
 
