@@ -7,9 +7,7 @@ defmodule Spotify.Client do
   end
 
   def put(conn_or_creds, url, body \\ "") do
-    headers = put_headers(conn_or_creds)
-    IEx.pry
-    HTTPoison.put(url, body, headers)
+    HTTPoison.put(url, body, get_headers(conn_or_creds))
   end
 
   def post(conn_or_creds, url, body \\ "") do
