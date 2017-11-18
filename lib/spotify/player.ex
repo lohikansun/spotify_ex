@@ -8,8 +8,7 @@ defmodule Spotify.Player do
 
   def play(conn, params) do
     url = "https://api.spotify.com/v1/me/player/play"
-    body = ~s({"uris":
-["spotify:track:4iV5W9uYEdYUVa79Axb7Rh", "spotify:track:1301WleyT98MSxVHPZCA6M"]})
+    body = ~s({context_uri:"spotify:album:1Je1IMUlBXcx1Fz0WE7oPT"})
     response = conn |> Client.put(url, body)
     IEx.pry
     handle_response(response)
