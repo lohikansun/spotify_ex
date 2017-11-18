@@ -8,7 +8,7 @@ defmodule Spotify.Player do
 
   def play(conn, params) do
     url = "https://api.spotify.com/v1/me/player/play"
-    body = HTTPoisson.encode(params)
+    body = Poison.encode!(params)
     response = conn |> Client.put(url, body)
     IEx.pry
     handle_response(response)
