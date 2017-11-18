@@ -8,7 +8,14 @@ defmodule Spotify.Player do
 
   def play(conn, params) do
     url = "https://api.spotify.com/v1/me/player/play"
+    body = "{\"uris\":
+[\"spotify:track:4iV5W9uYEdYUVa79Axb7Rh\", \"spotify:track:1301WleyT98MSxVHPZCA6M\"]}"
+IEx.pry
     conn |> Client.put(url) |> handle_response
+  end
+
+  def query_url(params) do
+    "https://api.spotify.com/v1/me/player/play" <>
   end
 
   def pause(conn, params) do
