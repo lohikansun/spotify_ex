@@ -14,9 +14,7 @@ defmodule Spotify.Player do
 
   def pause(conn, params) do
     url = "https://api.spotify.com/v1/me/player/pause"
-    response = conn |> Client.put(url)
-    IEx.pry
-    handle_response(response)
+    conn |> Client.put(url) |> handle_response
   end
 
   def next(conn, params) do
