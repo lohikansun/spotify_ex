@@ -22,6 +22,12 @@ defmodule Spotify.Player do
     conn |> Client.post(url) |> handle_response
   end
 
+  def seek(conn, params) do
+    url = "https://api.spotify.com/v1/me/player/seek" <> query_string(params)
+    conn |> Client.put(url) |> handle_response
+  end
+
+
   def info(conn, params) do
     url = "https://api.spotify.com/v1/me/player"
     conn |> Client.get(url) |> handle_response
