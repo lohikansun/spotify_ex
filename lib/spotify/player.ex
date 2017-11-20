@@ -34,6 +34,11 @@ defmodule Spotify.Player do
 
   end
 
+  def shuffle(conn, params) do
+    url = https://api.spotify.com/v1/me/player/shuffle <> query_string(params)
+    conn |> Client.put(url) |> handle_response
+  end
+
   def build_response(body), do: body
 
 end
